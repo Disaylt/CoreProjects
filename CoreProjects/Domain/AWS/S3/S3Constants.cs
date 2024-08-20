@@ -17,7 +17,7 @@ namespace CoreProjects.Domain.AWS.S3
         private const string _url = "s3Url";
         public static string Url => _url;
 
-        public const string _bucketEnvName = "s3Bucket";
+        private const string _bucketEnvName = "s3Bucket";
         public static string BucketEnvName => _bucketEnvName;
     }
 }
