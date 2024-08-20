@@ -15,15 +15,15 @@ namespace CoreProjects.Infrastructure.AWS.S3
             : this(configuration, 
                     new AmazonS3Config
                     {
-                        ServiceURL = configuration.GetValue<string>(S3Constants.Url)
+                        ServiceURL = configuration.GetValue<string>(S3Constants.Url) ?? throw new Exception("Service url is empty.")
                     })
         {
             
         }
 
         private ConfigurationAmazonS3Client(IConfiguration configuration, AmazonS3Config amazonS3Config)
-            : base(configuration.GetValue<string>(S3Constants.AccessKeyEnvName),
-                  configuration.GetValue<string>(S3Constants.SecretKeyEnvName),
+            : base(configuration.GetValue<string>(S3Constants.AccessKeyEnvName) ?? throw new Exception("Access key is empty."),
+                  configuration.GetValue<string>(S3Constants.SecretKeyEnvName) ?? throw new Exception("Secret ket is empty."),
                   amazonS3Config)
         {
 
