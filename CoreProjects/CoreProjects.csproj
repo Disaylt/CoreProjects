@@ -4,6 +4,14 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>$(AssemblyName)ByDisaylt</PackageId>
+    <Title>CoreProjects</Title>
+    <Authors>Disaylt</Authors>
+    <Company />
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>This lib combine general tasks.</Description>
+    <PackageReadmeFile>Untitled Document.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +26,13 @@
 
   <ItemGroup>
     <Folder Include="Domain\Common\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Downloads\Untitled Document.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
