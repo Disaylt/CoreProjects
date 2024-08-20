@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoreProjects.Infrastructure.AWS.S3
 {
-    public static class GetObjectS3Extensions
+    public static class GetObjectExtensions
     {
         public static async Task<string> ReadAsStringAsync(this GetObjectResponse value)
         {
