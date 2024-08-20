@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\Configuration\" />
+    <Folder Include="Domain\Common\" />
   </ItemGroup>
 
 </Project>
