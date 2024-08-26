@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CoreProjects.Infrastructure.Configuration
 {
-    internal class JsonConfigurationTemplate : IConfigurationTemplate
+    internal class JsonConfigurationTemplate : BaseConfigurationTemplate, IConfigurationTemplate
     {
         protected IConfigurationManager ConfigurationManager { get; }
         public JsonConfigurationTemplate(IConfigurationManager configurationManager)
@@ -16,7 +16,7 @@ namespace CoreProjects.Infrastructure.Configuration
             ConfigurationManager = configurationManager;
         }
 
-        public virtual Task LoadAsync(string filePath)
+        public override Task LoadAsync(string filePath)
         {
             ConfigurationManager.AddJsonFile(filePath);
 
