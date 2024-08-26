@@ -9,5 +9,6 @@ namespace CoreProjects.Application.Configuration
     public interface IConfigurationTemplate
     {
         public Task LoadAsync(string filePath);
+        public Task LoadRangeAsync(IEnumerable<string> filePath);
     }
 }
