@@ -31,7 +31,9 @@ namespace CoreProjects.Infrastructure.Configuration
         {
             IEnumerable<string> paths = configuration
                 .GetRequiredSection("ConfigRoutes")
-                .GetValueRequired<IEnumerable<string>>(applicationName);
+                .GetRequiredSection(applicationName)
+                .Get<IEnumerable<string>>()
+                ?? Enumerable.Empty<string>();
 
             await _configurationFactory.Create(type, configuration)
                 .LoadRangeAsync(paths);
