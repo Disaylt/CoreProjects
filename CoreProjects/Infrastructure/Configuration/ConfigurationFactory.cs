@@ -16,6 +16,7 @@ namespace CoreProjects.Infrastructure.Configuration
             return type switch
             {
                 ConfigurationTemplateType.S3 => new S3ConfigurationTemplate(configurationManager),
+                ConfigurationTemplateType.JsonFile => new JsonConfigurationTemplate(configurationManager),
                 _ => throw new Exception($"Type {type} is not registered.")
             };
         }
