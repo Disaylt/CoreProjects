@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CoreProjects.Infrastructure.Configuration
 {
-    internal class S3ConfigurationTemplate : IConfigurationTemplate
+    internal class S3ConfigurationTemplate : BaseConfigurationTemplate, IConfigurationTemplate
     {
         protected IAmazonS3 Client { get; }
         protected IConfigurationManager ConfigurationManager { get; }
@@ -25,7 +25,7 @@ namespace CoreProjects.Infrastructure.Configuration
             Bucket = configurationManager.GetValue<string>(S3Constants.BucketEnvName) ?? throw new Exception("Bucket is empty.");
         }
 
-        public async Task LoadAsync(string filePath)
+        public override async Task LoadAsync(string filePath)
         {
             GetObjectResponse response = await Client.GetObjectAsync(Bucket, filePath);
             ConfigurationManager.AddJsonStream(response.ResponseStream);

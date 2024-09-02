@@ -8,6 +8,7 @@ namespace CoreProjects.Domain.Configuration
 {
     public enum ConfigurationTemplateType
     {
-        S3
+        S3,
+        JsonFile
     }
 }
